@@ -109,7 +109,7 @@ export default async function CollectionPage({
                     href={`/collections/${c.handle}`}
                     className="group overflow-hidden rounded-md border border-cream-200 bg-cream-50 transition-shadow hover:shadow-lg hover:shadow-ink-950/10"
                   >
-                    <div className="relative aspect-square overflow-hidden bg-cream-200">
+                    <div className="relative aspect-[2000/2548] overflow-hidden bg-cream-200">
                       {cover && (
                         <Image
                           src={cover}
