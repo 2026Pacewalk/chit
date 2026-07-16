@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeroSlider from "@/components/home/HeroSlider";
 import CategorySidebar from "@/components/home/CategorySidebar";
+import OfferBanners from "@/components/home/OfferBanners";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProductCard from "@/components/store/ProductCard";
 import TabbedProducts from "@/components/home/TabbedProducts";
@@ -105,35 +106,8 @@ export default function HomePage() {
         />
       </section>
 
-      {/* Sale banner */}
-      <section className="relative overflow-hidden bg-ink-950">
-        <Image
-          src="/images/banners/banner-nfc.jpg"
-          alt="NFC smart card offer"
-          fill
-          sizes="100vw"
-          className="object-cover opacity-40"
-        />
-        <div className="relative mx-auto flex max-w-7xl flex-col items-start gap-5 px-4 py-20 sm:px-6 sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-300">
-            Limited Time Offer
-          </p>
-          <h2 className="font-display text-4xl font-semibold text-cream-50 sm:text-5xl">
-            Sale Up To <span className="text-gold-400">50% Off</span>
-          </h2>
-          <p className="max-w-lg text-cream-100/85">
-            Upgrade your networking game with our sleek NFC/QR cards! Just tap to instantly share
-            your contact info, social profiles, and more. Perfect for modern professionals on the go.
-          </p>
-          <Link
-            href="/collections/nfc-card"
-            className="group inline-flex items-center gap-2.5 rounded-full bg-gold-500 px-8 py-4 text-sm font-semibold text-ink-950 shadow-lg shadow-gold-500/30 transition-all hover:bg-gold-400"
-          >
-            Order Now
-            <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-      </section>
+      {/* Festive offer advertisement banners */}
+      <OfferBanners />
 
       {/* New arrivals */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
