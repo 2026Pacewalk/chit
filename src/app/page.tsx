@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSlider from "@/components/home/HeroSlider";
+import CategorySidebar from "@/components/home/CategorySidebar";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProductCard from "@/components/store/ProductCard";
 import TabbedProducts from "@/components/home/TabbedProducts";
@@ -26,7 +27,13 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroSlider />
+      {/* Hero: category sidebar + slider */}
+      <div className="mx-auto max-w-7xl px-4 pt-5 sm:px-6">
+        <div className="grid gap-5 lg:grid-cols-[270px_1fr]">
+          <CategorySidebar />
+          <HeroSlider />
+        </div>
+      </div>
 
       {/* Categories */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20">
@@ -63,26 +70,6 @@ export default function HomePage() {
               </Link>
             );
           })}
-        </div>
-      </section>
-
-      {/* Promo split banners */}
-      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20">
-        <div className="grid gap-5 md:grid-cols-2">
-          <PromoCard
-            image="/images/banners/promo-miniature.jpg"
-            kicker="Personalized Gifts"
-            title="Custom Miniature"
-            text="Custom-made artworks that playfully capture a person's likeness — highlighting unique features, hobbies and special moments."
-            href="/collections/personalized-carricature"
-          />
-          <PromoCard
-            image="/images/banners/promo-corporate.jpg"
-            kicker="Personalized"
-            title="Corporate Gifts"
-            text="Custom-branded items that express appreciation and strengthen business relationships — a lasting, professional impression."
-            href="/collections/personalized-corporate-gifts"
-          />
         </div>
       </section>
 
@@ -179,46 +166,5 @@ export default function HomePage() {
         <USPStrip />
       </section>
     </>
-  );
-}
-
-function PromoCard({
-  image,
-  kicker,
-  title,
-  text,
-  href,
-}: {
-  image: string;
-  kicker: string;
-  title: string;
-  text: string;
-  href: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group relative flex min-h-72 items-end overflow-hidden rounded-2xl bg-ink-900 sm:min-h-80"
-    >
-      <Image
-        src={image}
-        alt={title}
-        fill
-        sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/25 to-transparent" />
-      <div className="relative p-7">
-        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-300">{kicker}</p>
-        <h3 className="mt-1.5 font-display text-2xl font-semibold text-cream-50 sm:text-3xl">
-          {title}
-        </h3>
-        <p className="mt-2 max-w-md text-sm leading-relaxed text-cream-100/80">{text}</p>
-        <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-gold-300">
-          Shop Now
-          <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
-        </span>
-      </div>
-    </Link>
   );
 }

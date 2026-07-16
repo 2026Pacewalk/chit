@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream-50: #fdfcf9;
-  --color-cream-100: #faf7f0;
-  --color-cream-200: #f3ecdf;
-  --color-cream-300: #e9ddc8;
+  --color-cream-50: #ffffff;
+  --color-cream-100: #f7f5ef;
+  --color-cream-200: #eeece4;
+  --color-cream-300: #dfddd2;
 
-  --color-ink-950: #191512;
-  --color-ink-900: #241f1a;
-  --color-ink-800: #3a322a;
-  --color-ink-700: #52463a;
-  --color-ink-500: #83745f;
-  --color-ink-400: #a0917c;
+  --color-ink-950: #16161a;
+  --color-ink-900: #222226;
+  --color-ink-800: #37373d;
+  --color-ink-700: #4e4e55;
+  --color-ink-500: #7c7c84;
+  --color-ink-400: #9b9ba3;
 
-  --color-gold-300: #e6cf9a;
-  --color-gold-400: #d4b26a;
-  --color-gold-500: #c19a3d;
-  --color-gold-600: #a67f28;
-  --color-gold-700: #85651f;
+  /* Coral accent (kept under the gold-* token names used across components) */
+  --color-gold-300: #fbb1a2;
+  --color-gold-400: #f78d77;
+  --color-gold-500: #f2705b;
+  --color-gold-600: #e2573f;
+  --color-gold-700: #c34430;
 
-  --color-rose-accent: #b3384e;
+  --color-rose-accent: #e2573f;
 
   --font-display: var(--font-playfair), "Georgia", serif;
   --font-body: var(--font-jost), "Segoe UI", sans-serif;

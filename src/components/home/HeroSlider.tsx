@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { heroSlides } from "@/data/site";
-import { ArrowRight, ChevronLeft, ChevronRight } from "@/components/ui/Icons";
 
 const AUTOPLAY_MS = 6000;
 
@@ -24,75 +23,57 @@ export default function HeroSlider() {
   }, [index, go]);
 
   return (
-    <section className="relative overflow-hidden bg-ink-950" aria-label="Featured collections">
-      <div className="relative h-[62vw] max-h-[620px] min-h-[400px] w-full sm:h-[46vw]">
-        {heroSlides.map((s, i) => (
-          <div
-            key={s.title}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              i === index ? "opacity-100" : "opacity-0 pointer-events-none"
-            }`}
-          >
+    <section
+      className="relative overflow-hidden rounded-md bg-cream-100"
+      aria-label="Featured collections"
+    >
+      {heroSlides.map((s, i) => (
+        <div
+          key={s.title}
+          className={`grid items-center gap-6 px-6 py-10 sm:px-10 lg:grid-cols-[1fr_minmax(0,460px)] lg:gap-10 lg:py-12 ${
+            i === index ? "" : "hidden"
+          }`}
+        >
+          {/* Text */}
+          <div className={i === index ? "animate-fade-up" : ""}>
+            <p className="text-lg font-medium text-gold-500">{s.kicker}</p>
+            <h1 className="mt-1 font-body text-4xl font-bold uppercase leading-[1.05] tracking-tight text-ink-950 sm:text-5xl lg:text-6xl">
+              {s.title}
+            </h1>
+            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-700 sm:text-base">
+              {s.text}
+            </p>
+            <Link
+              href={s.href}
+              className="mt-8 inline-block rounded bg-gold-500 px-9 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-gold-600"
+            >
+              {s.cta}
+            </Link>
+          </div>
+
+          {/* Image */}
+          <div className={`relative mx-auto aspect-square w-full max-w-md ${i === index ? "animate-fade-in" : ""}`}>
             <Image
               src={s.image}
               alt={s.title}
               fill
               priority={i === 0}
-              sizes="100vw"
-              className={`object-cover object-center transition-transform duration-[7000ms] ease-out ${
-                i === index ? "scale-105" : "scale-100"
-              }`}
+              sizes="(max-width: 1024px) 90vw, 460px"
+              className="object-contain"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-ink-950/75 via-ink-950/35 to-transparent" />
-            <div className="absolute inset-0 flex items-center">
-              <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-                <div className={`max-w-xl ${i === index ? "animate-fade-up" : "opacity-0"}`}>
-                  <p className="mb-3 inline-block rounded-full border border-gold-400/60 bg-ink-950/30 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-gold-300 backdrop-blur">
-                    {s.kicker}
-                  </p>
-                  <h1 className="font-display text-4xl font-semibold leading-tight text-cream-50 sm:text-5xl lg:text-6xl">
-                    {s.title}
-                  </h1>
-                  <p className="mt-4 max-w-md text-sm leading-relaxed text-cream-100/85 sm:text-base">
-                    {s.text}
-                  </p>
-                  <Link
-                    href={s.href}
-                    className="group mt-7 inline-flex items-center gap-2.5 rounded-full bg-gold-500 px-7 py-3.5 text-sm font-semibold text-ink-950 shadow-lg shadow-gold-500/25 transition-all hover:bg-gold-400 hover:shadow-gold-400/40"
-                  >
-                    {s.cta}
-                    <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-            </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
 
-      {/* Controls */}
-      <button
-        onClick={() => go(index - 1)}
-        aria-label="Previous slide"
-        className="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full border border-cream-50/25 bg-ink-950/25 p-2.5 text-cream-50 backdrop-blur transition hover:bg-ink-950/50 sm:block"
-      >
-        <ChevronLeft size={20} />
-      </button>
-      <button
-        onClick={() => go(index + 1)}
-        aria-label="Next slide"
-        className="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full border border-cream-50/25 bg-ink-950/25 p-2.5 text-cream-50 backdrop-blur transition hover:bg-ink-950/50 sm:block"
-      >
-        <ChevronRight size={20} />
-      </button>
-      <div className="absolute bottom-5 left-1/2 flex -translate-x-1/2 gap-2">
+      {/* Dots */}
+      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2 lg:left-auto lg:right-1/4 lg:translate-x-1/2">
         {heroSlides.map((_, i) => (
           <button
             key={i}
             onClick={() => go(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === index ? "w-8 bg-gold-400" : "w-3 bg-cream-50/50 hover:bg-cream-50/80"
+            className={`h-2.5 w-2.5 rounded-full transition-colors ${
+              i === index ? "bg-gold-500" : "bg-ink-400/40 hover:bg-ink-400"
             }`}
           />
         ))}

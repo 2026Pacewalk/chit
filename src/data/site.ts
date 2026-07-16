@@ -21,7 +21,7 @@ export const site = {
 export const nav = [
   { label: "Home", href: "/" },
   {
-    label: "Shop",
+    label: "Catalog",
     href: "/collections",
     children: [
       { label: "Acrylic Miniature", href: "/collections/personalized-carricature" },
@@ -37,6 +37,17 @@ export const nav = [
   { label: "About Us", href: "/pages/about-us" },
   { label: "Blog", href: "/blogs/news" },
   { label: "Contact", href: "/pages/contact" },
+];
+
+export const categoryMenu = [
+  { label: "Acrylic QR Code", href: "/collections/acrylic-qr-stand" },
+  { label: "Acrylic Miniature", href: "/collections/personalized-carricature" },
+  { label: "Corporate Gifts", href: "/collections/personalized-corporate-gifts" },
+  { label: "Stationary", href: "/collections/stationary" },
+  { label: "Sign Board", href: "/collections/sign-board" },
+  { label: "NFC Card", href: "/collections/nfc-card" },
+  { label: "Religious Gifts", href: "/collections/religious-gifts" },
+  { label: "Wall Frames", href: "/collections/wall-frames" },
 ];
 
 export const usps = [
@@ -87,27 +98,19 @@ export const testimonials = [
 
 export const heroSlides = [
   {
-    image: "/images/banners/hero-1.jpg",
+    image: "/images/banners/promo-miniature.jpg",
     kicker: "Personalized Gifts",
-    title: "Custom Miniatures",
-    text: "Custom-made caricature artworks that playfully capture a person's likeness — perfect for weddings, anniversaries and every celebration.",
+    title: "Custom Miniature",
+    text: "Personalized Caricature / Miniature Gifts are custom-made artworks that playfully capture a person's likeness. Perfect for any celebration, they highlight unique features, hobbies, or special moments.",
     cta: "Shop Now",
     href: "/collections/personalized-carricature",
   },
   {
-    image: "/images/banners/hero-2.jpg",
+    image: "/images/banners/promo-corporate.jpg",
     kicker: "Personalized",
     title: "Corporate Gifts",
-    text: "Custom-branded items that express appreciation and strengthen business relationships — ideal for clients and employees.",
+    text: "Personalized Corporate Gifts are custom-branded items that express appreciation and strengthen business relationships. Ideal for clients or employees, they leave a lasting, professional impression.",
     cta: "Shop Now",
     href: "/collections/personalized-corporate-gifts",
-  },
-  {
-    image: "/images/banners/hero-3.jpg",
-    kicker: "NFC Smart Cards",
-    title: "Tap. Scan. Connect.",
-    text: "Upgrade your networking game with sleek NFC/QR cards — share your profile, reviews and contact info with a single tap.",
-    cta: "Order Now",
-    href: "/collections/nfc-card",
   },
 ];
