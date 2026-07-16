@@ -14,7 +14,7 @@ export default function ProductCard({ product, priority = false }: { product: Pr
 
   return (
     <div className="group relative flex flex-col">
-      <div className="relative aspect-square overflow-hidden rounded-xl bg-cream-200">
+      <div className="relative aspect-[2000/2548] overflow-hidden rounded-xl bg-cream-200">
         <Link href={`/products/${product.handle}`} aria-label={product.title}>
           <Image
             src={product.images[0] ?? "/images/logo.png"}

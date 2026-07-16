@@ -9,7 +9,7 @@ export default function ProductGallery({ images, title }: { images: string[]; ti
 
   return (
     <div>
-      <div className="relative aspect-square overflow-hidden rounded-2xl bg-cream-200">
+      <div className="relative aspect-[2000/2548] overflow-hidden rounded-2xl bg-cream-200">
         <Image
           key={active}
           src={list[active]}
