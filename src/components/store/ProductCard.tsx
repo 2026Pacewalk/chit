@@ -35,11 +35,6 @@ export default function ProductCard({ product, priority = false }: { product: Pr
           )}
         </Link>
 
-        {off && (
-          <span className="absolute left-3 top-3 rounded-full bg-rose-accent px-2.5 py-1 text-xs font-semibold text-white">
-            −{off}%
-          </span>
-        )}
         {!product.available && (
           <span className="absolute left-3 top-3 rounded-full bg-ink-800 px-2.5 py-1 text-xs font-semibold text-cream-100">
             Sold Out
@@ -83,10 +78,15 @@ export default function ProductCard({ product, priority = false }: { product: Pr
         >
           {product.title}
         </Link>
-        <div className="mt-1.5 flex items-baseline gap-2">
+        <div className="mt-1.5 flex flex-wrap items-baseline gap-2">
           <span className="font-semibold text-ink-950">{formatINR(product.price)}</span>
           {product.compareAtPrice && product.compareAtPrice > product.price && (
             <span className="text-sm text-ink-400 line-through">{formatINR(product.compareAtPrice)}</span>
+          )}
+          {off && (
+            <span className="rounded bg-rose-accent/10 px-1.5 py-0.5 text-xs font-bold text-rose-accent">
+              −{off}%
+            </span>
           )}
         </div>
       </div>
