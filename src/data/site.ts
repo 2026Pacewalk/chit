@@ -10,7 +10,7 @@ export const site = {
   phoneHref: "+919517722444",
   whatsapp: "919517722444",
   address: "SCO-209, Green Lotus Avenue, Zirakpur, Punjab",
-  copyright: "GURWINDER SINGH KAINTH",
+  copyright: "Chitrangi",
   social: {
     facebook: "https://www.facebook.com/",
     instagram: "https://www.instagram.com/",
