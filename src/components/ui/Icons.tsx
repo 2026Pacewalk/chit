@@ -131,6 +131,14 @@ export const GiftIcon = (p: IconProps) => (
   <Base {...p}><rect x="4" y="8" width="16" height="4" /><rect x="6" y="12" width="12" height="8" /><path d="M12 8v12M12 8s-4 0-4-2.5S12 4 12 8Zm0 0s4 0 4-2.5S12 4 12 8Z" /></Base>
 );
 
+export const GridIcon = (p: IconProps) => (
+  <Base {...p}><rect x="4" y="4" width="7" height="7" rx="1" /><rect x="13" y="4" width="7" height="7" rx="1" /><rect x="4" y="13" width="7" height="7" rx="1" /><rect x="13" y="13" width="7" height="7" rx="1" /></Base>
+);
+
+export const ListIcon = (p: IconProps) => (
+  <Base {...p}><rect x="4" y="4" width="6" height="6" rx="1" /><path d="M13 6h7M13 9h5" /><rect x="4" y="14" width="6" height="6" rx="1" /><path d="M13 16h7M13 19h5" /></Base>
+);
+
 export const SparkleIcon = (p: IconProps) => (
   <Base {...p}><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" /><path d="M19 15l.9 2.6L22.5 18l-2.6.9L19 21.5l-.9-2.6L15.5 18l2.6-.9L19 15Z" /></Base>
 );
